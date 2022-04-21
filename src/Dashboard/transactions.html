@@ -1,0 +1,276 @@
+<!doctype html>
+<html dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta نام="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+  
+
+<style>
+  html,
+  body {
+    height: 100%;
+  }
+
+  @media (min-width: 640px) {
+    table {
+      display: inline-table !important;
+    }
+
+    thead tr:not(:first-child) {
+      display: none;
+    }
+  }
+
+  td:not(:last-child) {
+    border-bottom: 0;
+  }
+
+  th:not(:last-child) {
+    border-bottom: 2px solid rgba(0, 0, 0, .1);
+  }
+</style>
+</head>
+<body class="bg-gray-100">
+<div class="min-h-full">
+  <nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+          </div>
+          <div class="hidden md:block">
+            <div class="mr-10 flex items-baseline space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">داشبورد</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">کاربران</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">دسته بندی ها</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">اشتراک های ویژه</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">فایل های من</a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="mr-4 flex items-center md:mr-6">
+            <button type="button" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+              <span class="sr-only">دیدن پیغام ها</span>
+              <!-- Heroicon نام: outline/bell -->
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+            </button>
+
+            <!-- Profile dropdown -->
+            <div class="mr-3 relative">
+              <div>
+                <button type="button" class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="sr-only">باز کردن منو کاربر</span>
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </button>
+              </div>
+
+              <!--
+                Dropdown menu, show/hide based on menu state.
+
+                Entering: "transition ease-out duration-100"
+                  From: "transform opacity-0 scale-95"
+                  To: "transform opacity-100 scale-100"
+                Leaving: "transition ease-in duration-75"
+                  From: "transform opacity-100 scale-100"
+                  To: "transform opacity-0 scale-95"
+              -->
+              <div class="origin-top-right absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                <!-- Active: "bg-gray-100", Not Active: "" -->
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">پروفایل شما</a>
+
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">تنظیمات</a>
+
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">خروج</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <!-- Mobile menu button -->
+          <button type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">باز کردن منو اصلی</span>
+            <!--
+              Heroicon نام: outline/menu
+
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!--
+              Heroicon نام: outline/x
+
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="md:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">داشبورد</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">کاربران</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">دسته بندی ها</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">اشتراک های ویژه</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">فایل های من</a>
+      </div>
+      <div class="pt-4 pb-3 border-t border-gray-700">
+        <div class="flex items-center px-5">
+          <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+          </div>
+          <div class="mr-3">
+            <div class="text-base font-medium leading-none text-white">محمد</div>
+            <div class="text-sm font-medium leading-none text-gray-400">mohammad@gmail.com</div>
+          </div>
+          <button type="button" class="mr-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <span class="sr-only">ndnk \dyhl ih</span>
+            <!-- Heroicon نام: outline/bell -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-3 px-2 space-y-1">
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">پروفایل شما</a>
+
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">تنظیمات</a>
+
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">خروج</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-gray-900">داشبورد</h1>
+    </div>
+  </header>
+  <main>
+    <div class="bg-white max-w-7xl mx-auto mt-5 py-3 sm:px-6 lg:px-8">
+      <div>
+        <h2 class="text-gray-800 font-semibold text-2xl">تراکنش ها</h2>
+      </div>
+      <!-- Replace with your content -->
+      <div class="px-4 py-6 sm:px-0">
+        <div class="container">
+          <table class="w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5">
+            <thead class="text-white">
+              <tr class="bg-cyan-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                <th class="p-3 text-right">نام</th>
+                <th class="p-3 text-right">ایمیل</th>
+                <th class="p-3 text-right" width="110px">عملیات</th>
+              </tr>
+              <tr class="bg-cyan-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                <th class="p-3 text-right">نام</th>
+                <th class="p-3 text-right">ایمیل</th>
+                <th class="p-3 text-right" width="110px">عملیات</th>
+              </tr>
+                      <tr class="bg-cyan-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                        <th class="p-3 text-right">نام</th>
+                        <th class="p-3 text-right">ایمیل</th>
+                        <th class="p-3 text-right" width="110px">عملیات</th>
+                    </tr>
+                      <tr class="bg-cyan-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                        <th class="p-3 text-right">نام</th>
+                        <th class="p-3 text-right">ایمیل</th>
+                        <th class="p-3 text-right" width="110px">عملیات</th>
+                    </tr>
+            </thead>
+            <tbody class="flex-1 sm:flex-none">
+              <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                <td class="border-grey-light border hover:bg-gray-100 p-3">John Covv</td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">contato@johncovv.com</td>
+                <td class="flex justify-around border-grey-light border p-3">
+                  <div class="text-blue-400 hover:text-blue-600 hover:font-medium cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                  </div>
+                  <div class="text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                  </div>
+                </td>
+              </tr>
+              <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                <td class="border-grey-light border hover:bg-gray-100 p-3">Michael Jackson</td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">m_jackson@mail.com</td>
+                <td class="flex justify-around border-grey-light border p-3">
+                  <div class="text-blue-400 hover:text-blue-600 hover:font-medium cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                    </svg>
+                  </div>
+                  <div class="text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                  </div>
+                </td>
+              </tr>
+                      <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                          <td class="border-grey-light border hover:bg-gray-100 p-3">Julia</td>
+                          <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">julia@mail.com</td>
+                          <td class="flex justify-around border-grey-light border p-3">
+                            <div class="text-blue-400 hover:text-blue-600 hover:font-medium cursor-pointer">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                              </svg>
+                            </div>
+                            <div class="text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                              </svg>
+                            </div>
+                          </td>
+                      </tr>
+                      <tr class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0">
+                        <td class="border-grey-light border hover:bg-gray-100 p-3">Martin Madrazo</td>
+                        <td class="border-grey-light border hover:bg-gray-100 p-3 truncate">martin.madrazo@mail.com</td>
+                        <td class="flex justify-around border-grey-light border p-3">
+                          <div class="text-blue-400 hover:text-blue-600 hover:font-medium cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                            </svg>
+                          </div>
+                          <div class="text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                              </svg>
+                          </div>
+                        </td>
+                      </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- /End replace -->
+    </div>
+  </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!doctype html>
+<html dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+<div class="min-h-full">
+  <nav class="bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <img class="h-8 w-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+          </div>
+          <div class="hidden md:block">
+            <div class="mr-10 flex items-baseline space-x-4">
+              <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+              <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">داشبورد</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">کاربران</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">دسته بندی ها</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">اشتراک های ویژه</a>
+
+              <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">فایل های من</a>
+            </div>
+          </div>
+        </div>
+        <div class="hidden md:block">
+          <div class="mr-4 flex items-center md:mr-6">
+            <button type="button" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+              <span class="sr-only">دیدن پیغام ها</span>
+              <!-- Heroicon name: outline/bell -->
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+            </button>
+
+            <!-- Profile dropdown -->
+            <div class="mr-3 relative">
+              <div>
+                <button type="button" class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                  <span class="sr-only">باز کردن منو کاربر</span>
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </button>
+              </div>
+
+              <!--
+                Dropdown menu, show/hide based on menu state.
+
+                Entering: "transition ease-out duration-100"
+                  From: "transform opacity-0 scale-95"
+                  To: "transform opacity-100 scale-100"
+                Leaving: "transition ease-in duration-75"
+                  From: "transform opacity-100 scale-100"
+                  To: "transform opacity-0 scale-95"
+              -->
+              <div class="origin-top-right absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                <!-- Active: "bg-gray-100", Not Active: "" -->
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">پروفایل شما</a>
+
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">تنظیمات</a>
+
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">خروج</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="-mr-2 flex md:hidden">
+          <!-- Mobile menu button -->
+          <button type="button" class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">باز کردن منو اصلی</span>
+            <!--
+              Heroicon name: outline/menu
+
+              Menu open: "hidden", Menu closed: "block"
+            -->
+            <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <!--
+              Heroicon name: outline/x
+
+              Menu open: "block", Menu closed: "hidden"
+            -->
+            <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div class="md:hidden" id="mobile-menu">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+        <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">داشبورد</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">کاربران</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">دسته بندی ها</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">اشتراک های ویژه</a>
+
+        <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">فایل های من</a>
+      </div>
+      <div class="pt-4 pb-3 border-t border-gray-700">
+        <div class="flex items-center px-5">
+          <div class="flex-shrink-0">
+            <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+          </div>
+          <div class="mr-3">
+            <div class="text-base font-medium leading-none text-white">محمد</div>
+            <div class="text-sm font-medium leading-none text-gray-400">mohammad@gmail.com</div>
+          </div>
+          <button type="button" class="mr-auto bg-gray-800 flex-shrink-0 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <span class="sr-only">ndnk \dyhl ih</span>
+            <!-- Heroicon name: outline/bell -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-3 px-2 space-y-1">
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">پروفایل شما</a>
+
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">تنظیمات</a>
+
+          <a href="#" class="block px-3 py-2 rounded-md text-base font-medium text-gray-400 hover:text-white hover:bg-gray-700">خروج</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-3xl font-bold text-gray-900">داشبورد</h1>
+    </div>
+  </header>
+  <main>
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <!-- Replace with your content -->
+      <div class="px-4 py-6 sm:px-0">
+      <div>
+        <div class="md:grid md:grid-cols-3 md:gap-6">
+          <div class="md:col-span-1">
+            <div class="px-4 sm:px-0">
+              <h3 class="text-lg font-medium leading-6 text-gray-900">پروفایل</h3>
+              <p class="mt-1 text-sm text-gray-600">اطلاعات خود را میتوانید در اینجا وارد کنید.</p>
+            </div>
+          </div>
+          <div class="mt-5 md:mt-0 md:col-span-2">
+            <form action="#" method="POST">
+              <div class="shadow sm:rounded-md sm:overflow-hidden">
+                <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                  
+                  <div class="col-span-6 sm:col-span-3">
+                    <label for="username" class="block text-sm font-medium text-gray-700">نام</label>
+                    <input type="text" name="username" id="username" autocomplete="given-name" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  </div>
+    
+                  <div class="col-span-6 sm:col-span-4">
+                    <label for="email-address" class="block text-sm font-medium text-gray-700">ایمیل</label>
+                    <input type="text" name="email" id="email-address" autocomplete="email" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                  </div>
+
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700" for="profile-photo"> عکس </label>
+                    <input type="file" style="display: none;" id="profile-photo">
+                    <div class="mt-1 flex items-center">
+                      <span class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                        <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                      </span>
+                      <button type="button" class="mr-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">تغییر</button>
+                    </div>
+                  </div>
+      
+                </div>
+                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">ذخیره</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hidden sm:block" aria-hidden="true">
+        <div class="py-5">
+          <div class="border-t border-gray-200"></div>
+        </div>
+      </div>
+      
+      <div class="mt-10 sm:mt-0">
+        <div class="md:grid md:grid-cols-3 md:gap-6">
+          <div class="md:col-span-1">
+            <div class="px-4 sm:px-0">
+              <h3 class="text-lg font-medium leading-6 text-gray-900">بازیابی رمزعبور</h3>
+              <p class="mt-1 text-sm text-gray-600">با وارد کردن رمز عبور قدیمی یک گذرواژه جدید رو وارد کنید.</p>
+            </div>
+          </div>
+          <div class="mt-5 md:mt-0 md:col-span-2">
+            <form action="#" method="POST">
+              <div class="shadow overflow-hidden sm:rounded-md">
+                <div class="px-4 py-5 bg-white sm:p-6">
+                  <div class="grid grid-cols-6 gap-6">
+    
+                    <div class="col-span-12 sm:col-span-6">
+                      <label for="old-password" class="block text-sm font-medium text-gray-700">رمز عبور قدیمی</label>
+                      <input type="password" name="password" id="old-password" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+    
+                    <div class="col-span-12 sm:col-span-6">
+                      <label for="new-password" class="block text-sm font-medium text-gray-700">رمز عبور جدید</label>
+                      <input type="password" name="password" id="new-password" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+    
+                    <div class="col-span-12 sm:col-span-6">
+                      <label for="confirm-new-password" class="block text-sm font-medium text-gray-700">تایید رمز عبور جدید</label>
+                      <input type="password" name="password" id="confirm-new-password" class="mt-1 focus:ring-cyan-500 focus:border-cyan-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                    </div>
+                  </div>
+                </div>
+                <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
+                  <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">ذخیره</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+      
+      </div>
+      <!-- /End replace -->
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
